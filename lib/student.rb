@@ -14,6 +14,7 @@ class Student
     @name = name
     @grade = grade
   end
+
   
   def self.create_table
     sql =  <<-SQL 
@@ -38,7 +39,6 @@ class Student
     SQL
 
     DB[:conn].execute(sql, self.name, self.grade)
-    
   end
 
   def self.create(name:, grade:)
